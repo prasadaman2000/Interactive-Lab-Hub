@@ -70,6 +70,8 @@ The interactive device can be anything *except* a computer, a tablet computer or
 
 \*\***Describe your setting, players, activity and goals here.**\*\*
 
+The device will be used in any setting by people who actively drink water. The goal of the device is to inform users when their bottle is almost empty such that they do not forget to fill their bottle when necessary.
+
 Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
 
 \*\***Include a picture of your storyboard here**\*\*
@@ -78,6 +80,8 @@ Present your idea to the other people in your breakout room. You can just get fe
 
 \*\***Summarize feedback you got here.**\*\*
 
+This part did not apply.
+
 
 ## Part B. Act out the Interaction
 
@@ -85,8 +89,11 @@ Try physically acting out the interaction you planned. For now, you can just pre
 
 \*\***Are there things that seemed better on paper than acted out?**\*\*
 
+The interaction felt a little awkward but went as planned.
+
 \*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**\*\*
 
+We came up with the idea to use a more obvious light so that the user is not confused.
 
 ## Part C. Prototype the device
 
@@ -99,6 +106,8 @@ We invented this tool for this lab!
 If you run into technical issues with this tool, you can also use a light switch, dimmer, etc. that you can can manually or remotely control.
 
 \*\***Give us feedback on Tinkerbelle.**\*\*
+
+Great tool - there was noticeable latency and was a little confusing to use at first but once we got a hang of it, it was a critical part of our project.
 
 
 ## Part D. Wizard the device
@@ -124,6 +133,7 @@ Think about the setting of the device: is the environment a place where the devi
 
 \*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
 
+The concern that the user may not be able to clearly see the device is influencing the way the device is designed to look. Originally, only the flashlight on the phone was meant to be visible, however we decided to change it to be the whole screen.
 
 ## Part F. Record
 
@@ -132,7 +142,7 @@ Think about the setting of the device: is the environment a place where the devi
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
 
-
+I collaborated with Escher Campanella on this lab. We worked together to costume the device, storyboard, and record the videos.
 
 # Staging Interaction, Part 2 
 
