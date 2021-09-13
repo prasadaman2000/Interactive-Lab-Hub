@@ -165,3 +165,9 @@ Do last week’s assignment again, but this time:
 3) We will be grading with an emphasis on creativity. 
 
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
+
+This part of the lab used sound to indicate to occupants of a room that the maximum occupancy has been exceeded.
+
+[Storyboard](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%201/IMG_20210913_131932.jpg)
+
+[Video](https://drive.google.com/file/d/1UaXR9OTgEsIdSA7Z4tQTH4kEyaQaovv2/view?usp=sharing)
