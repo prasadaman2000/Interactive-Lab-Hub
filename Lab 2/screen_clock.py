@@ -4,6 +4,7 @@ import digitalio
 import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
+from adafruit_rgb_display.rgb import color565
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -28,6 +29,11 @@ disp = st7789.ST7789(
     x_offset=53,
     y_offset=40,
 )
+
+red = color565(0, 255, 0)
+green = color565(255, 0, 255)
+
+colors = [red, green]
 
 # Create blank image for drawing.
 # Make sure to create image with mode 'RGB' for full color.
@@ -60,12 +66,20 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
+counter = 0
+
+text = "hello!"
+
 while True:
+    counter += 1
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-    #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
+    # text = input("Enter something to display: ")
 
-    # Display image.
+    #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
+    draw.text((0,0), text, font=font, fill=colors[counter % 2])
+
+    # Display image
     disp.image(image, rotation)
     time.sleep(1)
