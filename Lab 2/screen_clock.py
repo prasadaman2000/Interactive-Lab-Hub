@@ -5,6 +5,9 @@ import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 from adafruit_rgb_display.rgb import color565
+import datetime
+from mycode.Shape import create_shape
+import random
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -30,11 +33,6 @@ disp = st7789.ST7789(
     y_offset=40,
 )
 
-red = color565(0, 255, 0)
-green = color565(255, 0, 255)
-
-colors = [red, green]
-
 # Create blank image for drawing.
 # Make sure to create image with mode 'RGB' for full color.
 height = disp.width  # we swap height/width to rotate it to landscape!
@@ -48,38 +46,69 @@ draw = ImageDraw.Draw(image)
 # Draw a black filled box to clear the image.
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image, rotation)
+
 # Draw some shapes.
 # First define some constants to allow easy resizing of shapes.
 padding = -2
 top = padding
 bottom = height - padding
+
 # Move left to right keeping track of the current x position for drawing shapes.
 x = 0
-
-# Alternatively load a TTF font.  Make sure the .ttf font file is in the
-# same directory as the python script!
-# Some other nice fonts to try: http://www.dafont.com/bitmap.php
-font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
-counter = 0
+def get_current_time():
+    curtime = datetime.datetime.now()
+    hour = curtime.hour
+    minute = curtime.minute
 
-text = "hello!"
+    return(hour // 10, hour % 10, minute // 10, minute % 10)
+
+def get_random_color():
+    return ["#"+''.join([random.choice('ABCDEF0123456789') for i in range(6)])][0]
+
+    return color565(c1, c2, c3)
+
+oldhour1, oldhour2, oldmin1, oldmin2 = -1, -1, -1, -1
 
 while True:
-    counter += 1
+    hour1, hour2, min1, min2 = get_current_time()
+
+    # print(get_current_time())
+
+    if hour1 != oldhour1:
+        oldhour1 = hour1
+        h1 = create_shape(hour1, 20, (50, 30), get_random_color())
+    
+    if hour2 != oldhour2:
+        oldhour2 = hour2
+        h2 = create_shape(hour2, 20, (130, 30), get_random_color())
+    
+    if min1 != oldmin1:
+        oldmin1 = min1
+        m1 = create_shape(min1, 20, (90, 110), get_random_color())
+    
+    if min2 != oldmin2:
+        oldmin2 = min2
+        m2 = create_shape(min2, 20, (170, 110), get_random_color())
+
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-    # text = input("Enter something to display: ")
+    h1.render_shape(draw)
+    h2.render_shape(draw)
+    m1.render_shape(draw)
+    m2.render_shape(draw)
 
-    #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
-    draw.text((0,0), text, font=font, fill=colors[counter % 2])
+    h1.rotate(0.02)
+    h2.rotate(0.02)
+    m1.rotate(0.02)
+    m2.rotate(0.02)
 
     # Display image
     disp.image(image, rotation)
-    time.sleep(1)
+    # time.sleep(0.1)
