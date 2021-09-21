@@ -202,6 +202,7 @@ After that, Git will ask you to login to your GitHub account to push the updates
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
 
+In order to improve this, I would like to add some text to the screen that will help people better understand what each shape represents. For example, it may be difficult to distinguish the number 7 from the number 9 without looking closely at the shape. I would also allow users to toggle between text-box-like shapes and the current shape model via a button press.
 
 # Prep for Part 2
 
