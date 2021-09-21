@@ -70,12 +70,12 @@ class TwoSidedShape(Shape):
 
     def render_shape(self, draw):
         points = self.get_points()
-        draw.line((points[0][0], points[0][1], points[1][0], points[1][1]), fill=self.color, outline="#FFFFFF")
-        draw.line((points[2][0], points[2][1], points[1][0], points[1][1]), fill=self.color, outline="#FFFFFF")
+        draw.line((points[0][0], points[0][1], points[1][0], points[1][1]), fill="#FFFFFF")
+        draw.line((points[2][0], points[2][1], points[1][0], points[1][1]), fill="#FFFFFF")
 
 def create_shape(sides, radius, center=(0, 0), color = "#FFFFFF"):
     if sides == 2:
-        return TwoSidedShape(radius, center, color)
+        return TwoSidedShape(radius, center)
 
     if sides == 1:
         return Shape(2, radius, center, color)

@@ -7,6 +7,7 @@ import adafruit_rgb_display.st7789 as st7789
 from adafruit_rgb_display.rgb import color565
 import datetime
 from mycode.Shape import create_shape
+from mycode.EdgeDetector import EdgeDetector
 import random
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
@@ -75,24 +76,30 @@ def get_random_color():
 
 oldhour1, oldhour2, oldmin1, oldmin2 = -1, -1, -1, -1
 
+buttonA = digitalio.DigitalInOut(board.D23)
+
+edge_detector = EdgeDetector(buttonA)
+
 while True:
     hour1, hour2, min1, min2 = get_current_time()
 
     # print(get_current_time())
 
-    if hour1 != oldhour1:
+    neg_edge = edge_detector.neg_edge()
+
+    if neg_edge or hour1 != oldhour1:
         oldhour1 = hour1
         h1 = create_shape(hour1, 20, (50, 30), get_random_color())
     
-    if hour2 != oldhour2:
+    if neg_edge or hour2 != oldhour2:
         oldhour2 = hour2
         h2 = create_shape(hour2, 20, (130, 30), get_random_color())
     
-    if min1 != oldmin1:
+    if neg_edge or min1 != oldmin1:
         oldmin1 = min1
         m1 = create_shape(min1, 20, (90, 110), get_random_color())
     
-    if min2 != oldmin2:
+    if neg_edge or min2 != oldmin2:
         oldmin2 = min2
         m2 = create_shape(min2, 20, (170, 110), get_random_color())
 
