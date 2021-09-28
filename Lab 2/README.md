@@ -212,6 +212,8 @@ In order to improve this, I would like to add some text to the screen that will 
 
 # Lab 2 Part 2
 
+[Link to Video](https://drive.google.com/file/d/1ME095G6hJBbD261da9NjOCAjcfoMYArV/view?usp=sharing)
+
 Pull Interactive Lab Hub updates to your repo.
 
 Modify the code from last week's lab to make a new visual interface for your new clock. You may [extend the Pi](Extending%20the%20Pi.md) by adding sensors or buttons, but this is not required.
