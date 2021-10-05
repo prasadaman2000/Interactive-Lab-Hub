@@ -1,0 +1,32 @@
+<script type="application/javascript">
+    function handleClick(){
+        submitForm("A message from " + document.getElementById('name').value + " ... " + document.getElementById('Message').value)
+    }
+
+    function submitForm(text){
+        encodeURI(text)
+        var req = new XMLHttpRequest();
+        req.onload = function(){
+            alert(req.responseText);
+        }
+        req.open("GET", "/saySomething?name="+text);
+        req.send();
+    }
+</script>
+
+<body>
+    <h1>
+        Type a message to broadcast!
+    </h1>
+
+    <input id="name" placeholder="From"/>
+    <br>
+    <br>
+    <textarea id="Message" placeholder="Type message to broadcast" type="time"></textarea>
+    <br>
+    <br>
+    <button onclick="handleClick(this)">
+        Broadcast Message
+    </button>
+
+</body>

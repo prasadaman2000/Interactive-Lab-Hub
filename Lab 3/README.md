@@ -54,7 +54,8 @@ Now, you might wonder what exactly is a `.sh` file? Typically, a `.sh` file is a
 You can also play audio files directly with `aplay filename`. Try typing `aplay lookdave.wav`.
 
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
-(This shell file should be saved to your own repo for this lab.)
+
+*The file can be found at myGoogleTTS.sh*
 
 Bonus: If this topic is very exciting to you, you can try out this new TTS system we recently learned about: https://github.com/rhasspy/larynx
 
@@ -67,6 +68,8 @@ In particular, look at `test_words.py` and make sure you understand how the voca
 One thing you might need to pay attention to is the audio input setting of Pi. Since you are plugging the USB cable of your webcam to your Pi at the same time to act as speaker, the default input might be set to the webcam microphone, which will not be working for recording.
 
 \*\***Write your own shell file that verbally asks for a numerical based input (such as a phone number, zipcode, number of pets, etc) and records the answer the respondent provides.**\*\*
+
+*The file can be found at my_mic.sh*
 
 Bonus Activity:
 
@@ -103,15 +106,33 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 
 \*\***Post your storyboard and diagram here.**\*\*
 
+[Storyboard](https://drive.google.com/file/d/1NvETdG1s2yVgnMo-KwhZgLC3ULfSZumD/view?usp=sharing)
+
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses. 
 
 \*\***Please describe and document your process.**\*\*
+
+I imagine the dialogue to be the following:
+
+Step 1: User enters name (Aman) and message to broadcast (Hello there!)
+
+Step 2: Device says "Message from Aman: Hello there!"
+
+Step 3: Device says "Please record your response"
+
+Step 4: Person says "Hello Aman!"
+
+Step 5: Browser window displays response "Hello Aman!"
 
 ### Acting out the dialogue
 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing.  Please record this interaction (for example, using Zoom's record feature).
 
+[Link to audio](https://drive.google.com/file/d/1WVf_GgU65tzNF5GLGDK0uz5uJmG5xwYP/view?usp=sharing)
+
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
+
+The dialogue seemed straightforward and similar to what I had imagined. The interaction was slightly more awkward, however that is expected in these situations.
 
 ### Wizarding with the Pi (optional)
 In the [demo directory](./demo), you will find an example Wizard of Oz project. In that project, you can see how audio and sensor data is streamed from the Pi to a wizard controller that runs in the browser.  You may use this demo code as a template. By running the `app.py` script, you can see how audio and sensor data (Adafruit MPU-6050 6-DoF Accel and Gyro Sensor) is streamed from the Pi to a wizard controller that runs in the browser `http://<YouPiIPAddress>:5000`. You can control what the system says from the controller as well!
