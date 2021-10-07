@@ -166,18 +166,18 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+
+The system was easy to use and intuitive. 
 
 ### What worked well about the controller and what didn't?
 
-\*\**your answer here*\*\*
+The controller was clear in the prompt, however the users seemed unclear about when to actually respond to the incoming message.
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
-\*\**your answer here*\*\*
-
+I can take away the lesson of making it clear to users on both ends of the system about when an interaction is expected and what that expected interaction may look like.
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
-\*\**your answer here*\*\*
+I could use my system to create a dataset that maps messages to responses in order to potentially train an autonomous responder that mimics the way a human would respond.
 
