@@ -158,7 +158,11 @@ The system should:
 
 *Document how the system works*
 
+The `server.py` file was modified to serve the webpage `static/some_text.html` when the user navigates to port 5000. When a user enters a message to be broadcast, a GET request is issued to the `saySomething` endpoint, which invokes the `arbitrary_googletts.sh` script to read the message aloud, and changes the state of the system on the screen attached to the Pi. After the message is broadcast, `get_speech.sh` is invoked, which captures 5 seconds of a response from the message recipient. After the message is recorded, it is parsed using Vosk TTS, and the reply is sent back to the user. Throughout this process, the message recipient is updated about the status of the system on the screen.
+
 *Include videos or screencaptures of both the system and the controller.*
+
+[Link to video](https://drive.google.com/file/d/1QN7GJsgzOyQi7xHfYg3wYw9I_sDVj0Ti/view?usp=sharing)
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
