@@ -179,8 +179,11 @@ Usually, sensors need to positioned in specific locations or orientations to mak
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
+The sketches raise usability as questions - for example, it is unclear how the stove protector would actually be effective in determining if someone is near the stove. Physically prototyping what the device will look like and placing it in the approximate position where the actual device will reside will allow me to determine if the device is designed well.
+
 **\*\*\*Pick one of these designs to prototype.\*\*\***
 
+I will prototype the Automatic Light Switch, which uses the proximity sensor to determine whether or not a light should be switched on or off.
 
 ### Part D
 ### Physical considerations for displaying information and housing parts
@@ -226,9 +229,15 @@ Think about how you want to present the information about what your sensor is se
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
+These sketches only show the outside of the device - it is unclear how the sensors/buttons will be mounted to the inside of the housing. I would need to physically prototype the device and place buttons and sensors in order to understand how all of this will work.
+
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
 
+I will integrate display 4, which uses the ambient lighting to control the light, along with a display that shows relevant information and a button to toggle the state of the light.
+
 **\*\*\*Explain the rationale for the design.\*\*\*** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+
+The design is made so because there are cases where the ambient lighting is not the only factor that determines if a light should be turned on. For example, if it is time to go to bed, one may choose to turn the light off, even if it is dark outside. However, the device may still be useful in situations where it may be inconvenient to get up and turn the light on.
 
 Build a cardbord prototype of your design.
 
