@@ -243,6 +243,15 @@ Build a cardbord prototype of your design.
 
 **\*\*\*Document your rough prototype.\*\*\***
 
+This prototype implements design 4 - one challenge I faced in terms of building this prototype was making sure the holes in the box were long enough for I2C cables to connect everywhere they needed to connect. A bit of reworking is necessary and will be done in order to ensure that the button can be connected to the top of the device (next to the sensor).
+
+#### Front Side
+
+![Sketches](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%204/Side.jpg?raw=true)
+
+#### Top
+
+![Sketches](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%204/Top.jpg?raw=true)
 
 LAB PART 2
 
