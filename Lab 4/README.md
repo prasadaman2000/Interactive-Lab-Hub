@@ -291,6 +291,24 @@ We encourage you to try using these controls, **while** paying particular attent
 ### Part F
 ### Record
 
+Given the lack of success with the design in Part 1 of the lab, I decided to change the interaction and design of the device. Instead of automatically turning on a light, I created a device that would give recommendations to people on whether or not it is an appropriate time to turn on the light. The interaction is storyboarded here:
+
+![Storyboard](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%204/FinalStoryboard.jpg?raw=true)
+
+Given the storyboard, I designed the device as follows. The top of the device housed the light sensor, and the front of the device housed the button (made of conductive tape).  In the rear of the device lives the speaker that uses TTS to speak out the recommendations. We can see pictures of the design drawings here:
+
+![Design](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%204/FinalDesign.jpg?raw=true)
+
+We can see pictures of the implemented device here:
+
+![PicTop](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%204/FinalTop.jpg?raw=true)
+
+
+![PicInside](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%204/Inside.jpg?raw=true)
+
+
+Lastly, [here](https://drive.google.com/file/d/1TGw58sp0vscNIIKfUL4BpWCmBx-HsiNe/view?usp=sharing) is a link to the recording of the interaction.
+
 Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 * "Works like": shows what the device can do
