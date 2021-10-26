@@ -1,6 +1,6 @@
 from abc import abstractmethod
 from my_utils.Button import Button
-from threading import Thread, Lock
+from threading import Thread, Lock, Condition
 import time
 
 class EdgeDetector:
@@ -8,6 +8,7 @@ class EdgeDetector:
         self.button = button
         self.state = button.get_value()
         self.eLock = Lock()
+        self.eCond = Condition()
         self.available_edges = 0
         self._poll_t = None
         self.lazy = lazy
@@ -29,6 +30,9 @@ class EdgeDetector:
             if has_edge:
                 edge_detector.eLock.acquire()
                 edge_detector.available_edges += 1
+                edge_detector.eCond.acquire()
+                edge_detector.eCond.notify_all()
+                edge_detector.eCond.release()
                 edge_detector.eLock.release()
             time.sleep(0.1)
         print(f"[not lazy] thread exit watching cap {edge_detector}")
@@ -55,6 +59,11 @@ class EdgeDetector:
         self.available_edges = 0
         self.eLock.release()
         return to_ret
+
+    def wait_for_edge(self):
+        self.eCond.acquire()
+        self.eCond.wait()
+        self.eCond.release()
 
     def lazy_edge(self):
         cur_state = self.button.get_value()
