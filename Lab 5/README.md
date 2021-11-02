@@ -100,6 +100,28 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 
 **\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
 
+**Contour Detection**
+![Contour Detection](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%205/Images/ContourDetection.png?raw=true)
+
+The contour detection model can be used to generate cartoon-like images of a person in a photobooth. The contours somewhat match the shape of the person's face along with any objects in the picture, so this algorithm would be great for this purpose.
+
+**Face Detection**
+![Face Detection](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%205/Images/FaceDetection.png?raw=true)
+
+Given the face detection model, one could possibly train a facial recognition model based on the detected faces in order to build an automatic greeter when someone enters a room/house. However, this may be too computationally heavy to perform on a device such as a Raspberry Pi.
+
+
+**Flow Detection**
+![Flow Detection](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%205/Images/FlowDetection.png?raw=true)
+
+Given the flow detection model, a device can be made that tracks how many people are coming in and out of each elevator in The House every day. This algorithm works best as it not only determines objects of interests, but also tracks their position relative to the previous frame.
+
+**Object Detection**
+![Object Detection](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%205/Images/ObjectDetection.png?raw=true)
+
+The object detection model (preferrably one that provides labels for each of the bounding boxes) can be used to create a translation service for students or immigrants new to a country. For example, if someone took a picture of a pen, it would be able to translate the word "pen" to the target language.
+
+
 #### MediaPipe
 
 A more recent open source and efficient method of extracting information from video streams comes out of Google's [MediaPipe](https://mediapipe.dev/), which offers state of the art face, face mesh, hand pose, and body pose detection.
@@ -135,6 +157,8 @@ Each of the installs will take a while, please be patient. After successfully in
 Try the two main features of this script: 1) pinching for percentage control, and 2) "[Quiet Coyote](https://www.youtube.com/watch?v=qsKlNVpY7zg)" for instant percentage setting. Notice how this example uses hardcoded positions and relates those positions with a desired set of events, in `hand_pose.py` lines 48-53. 
 
 **\*\*\*Consider how you might use this position based approach to create an interaction, and write how you might use it on either face, hand or body pose tracking.\*\*\***
+
+I could use this interaction to translate ASL to English, or some other target language, as this can be used to track hand, body, and arm movements.
 
 (You might also consider how this notion of percentage control with hand tracking might be used in some of the physical UI you may have experimented with in the last lab, for instance in controlling a servo or rotary encoder.)
 
@@ -172,7 +196,9 @@ This might take a while to get fully installed. After installation, connect your
 
 **\*\*\*Whether you make your own model or not, include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.\*\*\***
 
+![Object Detection](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%205/Images/TM_Example.png?raw=true)
 
+I can extend the Teachable Machines example by training my own model to determine whether an image contains a rock, paper, or scissors symbol. This can be further abstracted to implement a game of rock paper scissors, which can be played against an AI, or against another human.
 *Don't forget to run ```deactivate``` to end the Teachable Machines demo, and to reactivate with ```source tmachine/bin/activate``` when you want to use it again.*
 
 
@@ -198,6 +224,10 @@ This can be as simple as the boat detector earlier.
 Try out different interaction outputs and inputs.
 
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
+
+The interaction I prototyped is a rock, paper, scissors game, as described below.
+
+![Rock paper scissors](https://github.com/prasadaman2000/Interactive-Lab-Hub/blob/Fall2021/Lab%205/Images/RPS.jpg?raw=true)
 
 ### Part C
 ### Test the interaction prototype
