@@ -239,11 +239,19 @@ For example:
 1. When it fails, why does it fail?
 1. Based on the behavior you have seen, what other scenarios could cause problems?
 
+The system does what it's supposed to do most of the time, however it fails in situations when the Teachable Machines model does not correctly differentiate between rock,
+paper, and scissors. I believe this happens because the data I used to train the model was not robust enough, and the model learned to identify things other than the hand position.
+Other scenarios that can cause problems include using the system against a non-white background, as that could cause the model to be confused about what the user is displaying.
+
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
 1. How bad would they be impacted by a miss classification?
 1. How could change your interactive system to address this?
 1. Are there optimizations you can try to do on your sense-making algorithm.
+
+Users are not immediately aware of uncertainties in the system, particularly those regarding the model being confused about what sign they are showing. A misclassification could be catastrophic,
+especially if the game of rock, paper, scissors is being played for some important decision. I could change my interactive system to take in user input whenever a wrong prediction was made.
+Currently (not picutred in the videos after an optimization), the system lags behind real life and picks up frames with a many-second lag. This is unacceptable and needs an optimzation to make it faster.
 
 ### Part D
 ### Characterize your own Observant system
@@ -260,8 +268,12 @@ During the lecture, we mentioned questions to help characterize a material:
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
+(Intermediate Video)[https://drive.google.com/file/d/1YFcbQsb55sk3O8K1LNPab_XmJg8zlzV2/view]
+
 ### Part 2.
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
+
+(Final Video)[https://drive.google.com/file/d/1YARdhriKRgBOuc_FtDEXoTlQPLVq_roO/view?usp=sharing]

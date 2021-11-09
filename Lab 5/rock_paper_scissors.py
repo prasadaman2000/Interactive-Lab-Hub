@@ -14,6 +14,8 @@ import cv2
 import abc
 import enum
 
+import os
+
 class RPS_Moves(enum.Enum):
     Rock = 1
     Paper = 2
@@ -50,14 +52,25 @@ class CameraAgent(Agent):
             self.labels.append(line.split(' ')[1].strip())
         
         self.model = tensorflow.keras.models.load_model('./RPS_model/keras_model.h5')
-        self.cap = cv2.VideoCapture(0)
-        if self.cap is None or not self.cap.isOpened():
-            raise("No camera")
         self.history = []
         self.last_image = None
 
     def next_move(self):
-        ret, img = self.cap.read()
+        self.cap = cv2.VideoCapture(0)
+        if self.cap is None or not self.cap.isOpened():
+            raise("No camera")
+
+        print("Place your hand in the camera!")
+
+        counter = 0
+
+        while counter < 100:
+            _, img = self.cap.read()
+            cv2.imshow("your hand", img)
+            cv2.waitKey(1)
+            counter += 1
+        
+        _, img = self.cap.read()
 
         self.last_image = img.copy()
 
@@ -78,6 +91,8 @@ class CameraAgent(Agent):
         prediction = self.model.predict(data)
         prediction_label = self.labels[np.argmax(prediction)]
         self.history.append(prediction_label)
+
+        self.cap.release()
 
         return RPS_Moves.eval_from_str(prediction_label)
 
@@ -154,6 +169,8 @@ class RPS_Game:
         
         return (self.score1, self.score2)
 
+def speak(s):
+    os.system(f'sh arbitrary_googletts.sh \"{s}\"')
 
 if __name__ == "__main__":
     agent1 = CameraAgent()
@@ -162,17 +179,14 @@ if __name__ == "__main__":
     game = RPS_Game(agent1, agent2)
 
     while True:
-        print("rock")
-        time.sleep(2)
-        print("paper")
-        time.sleep(2)
-        print("scissors")
-        time.sleep(2)
-        print("shoot! wait for score update")
+        speak("rock")
+        speak("paper")
+        speak("scissors")
+        speak("shoot!")
         move_1, move_2 = game.next()
         print(f"you played {move_1} and your opponent played {move_2}")
 
         player_score, computer_score = game.update_game(move_1, move_2)
 
-        print(f"score is now you: {player_score}, computer: {computer_score}")
+        speak(f"score is now you: {player_score}, computer: {computer_score}")
 
